@@ -214,5 +214,15 @@
     }
   });
 
+  // 모바일 메뉴 토글
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNav = document.querySelector('.mobile-nav');
+  if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+  }
+
   init();
 })();

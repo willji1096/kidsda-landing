@@ -168,6 +168,31 @@ a { text-decoration: none; color: inherit; }
   border-radius: 999px;
 }
 
+/* 모바일 메뉴 */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 16px 20px 20px;
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav-link {
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-100);
+  transition: color 0.2s;
+}
+
+.mobile-nav-link:last-child { border-bottom: none; }
+.mobile-nav-link.active-link { color: var(--primary); font-weight: 700; }
+
 /* ===== Side Nav (우측 배민 스타일 - 콘텐츠 영역 끝) ===== */
 .side-nav {
   position: fixed;
