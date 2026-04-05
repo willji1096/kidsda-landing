@@ -76,7 +76,7 @@ html:has(.educlip-body) body {
     radial-gradient(circle 400px at 50% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 70%),
     linear-gradient(135deg, #c9e6ff 0%, #a1c7ff 30%, #d4c8ff 60%, #bfe0ff 100%);
   background-size: 200% 200%;
-  animation: edu-bg-drift 12s ease-in-out infinite;
+  animation: edu-bg-drift 8s ease-in-out infinite;
   padding: 120px 0 40px;
   overflow: visible;
 }
@@ -604,10 +604,8 @@ html:has(.educlip-body) body {
 
 
   .edu-assure-grid { grid-template-columns: 1fr; }
-  /* 4. 태블릿: 마스코트 위치/크기 조정 */
-  .edu-assure-mascot { left: 50%; transform: translateX(-50%); top: -100px; width: 200px; height: 200px; }
-  .edu-assure-badge { min-height: 220px; }
-  .edu-assure-badge h3 { margin-top: 120px; }
+  .edu-assure-badge { min-height: auto; padding: 28px; }
+  .edu-assure-badge h3 { margin-top: 0; font-size: 28px; }
 
   .edu-footer .footer-mid { flex-direction: column; gap: 32px; }
   .edu-footer .footer-links-group { gap: 40px; flex-wrap: wrap; }
@@ -641,13 +639,16 @@ html:has(.educlip-body) body {
   /* 3. 모바일: 배너 높이 유지 */
   .edu-band-inner { height: 100px; }
 
-  /* 4. 모바일: 만족 보장 마스코트 클리핑 방지 */
-  .edu-assure { padding: 60px 0 40px; }
-  .edu-assure-badge { padding: 20px; min-height: 180px; }
-  .edu-assure-badge h3 { font-size: 24px; margin-top: 100px; }
-  .edu-assure-mascot { left: 50%; transform: translateX(-50%); top: -80px; width: 160px; height: 160px; }
-  .edu-alist { padding: 16px 16px 16px 48px; }
-  .edu-alist::before { left: 12px; top: 12px; width: 24px; height: 24px; font-size: 14px; }
+  /* 모바일: 상품 안내 */
+  .edu-assure { padding: 48px 0; }
+  .edu-assure-badge { padding: 24px; min-height: auto; border-radius: 12px; }
+  .edu-assure-badge h3 { font-size: 22px; margin-top: 0; }
+  .edu-assure-desc { font-size: 14px; margin-bottom: 20px; }
+  .edu-assure-features li { font-size: 13px; }
+  .edu-alist { padding: 20px 20px 20px 52px; }
+  .edu-alist::before { left: 14px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; font-size: 14px; }
+  .edu-alist strong { font-size: 14px; }
+  .edu-alist p { font-size: 13px; }
 
   /* 5. 모바일: FAQ padding 유지 */
   .edu-faq { padding: 40px 0 60px; }
