@@ -1,0 +1,665 @@
+/* ===== 에듀클립 페이지 전용 스타일 ===== */
+
+/* body 오버라이드 */
+html:has(.educlip-body),
+html:has(.educlip-body) body {
+  position: static !important;
+  overflow: auto !important;
+  height: auto !important;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+.header-scrolled-edu {
+  background: transparent !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.header--scrolled.header-scrolled-edu {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* 모바일 메뉴 */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 16px 20px 20px;
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav-link {
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-100);
+  transition: color 0.2s;
+}
+
+.mobile-nav-link:last-child { border-bottom: none; }
+.mobile-nav-link.active-link { color: var(--primary); font-weight: 700; }
+
+.mobile-nav-cta {
+  background: var(--primary);
+  color: var(--white) !important;
+  text-align: center;
+  border-radius: 12px;
+  padding: 14px 0 !important;
+  margin-top: 8px;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+}
+
+/* 컨테이너 */
+.edu-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* ===== Hero ===== */
+/* 1. 히어로: overflow hidden 제거 → 이미지가 잘리지 않도록, 섹션 자체는 가려야 할 부분 없음 */
+.edu-hero {
+  background:
+    radial-gradient(circle 600px at 20% 40%, rgba(13, 108, 249, 0.12) 0%, transparent 70%),
+    radial-gradient(circle 500px at 80% 30%, rgba(147, 130, 255, 0.1) 0%, transparent 70%),
+    radial-gradient(circle 400px at 50% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 70%),
+    linear-gradient(135deg, #c9e6ff 0%, #a1c7ff 30%, #d4c8ff 60%, #bfe0ff 100%);
+  background-size: 200% 200%;
+  animation: edu-bg-drift 12s ease-in-out infinite;
+  padding: 120px 0 40px;
+  overflow: visible;
+}
+
+@keyframes edu-bg-drift {
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 50% 30%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 80%; }
+  100% { background-position: 0% 0%; }
+}
+
+.edu-hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  min-height: 420px;
+}
+
+.edu-hero-copy {
+  flex: 1;
+  max-width: 560px;
+}
+
+.edu-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(13, 108, 249, 0.08);
+}
+
+.edu-eyebrow i {
+  font-size: 14px;
+}
+
+.edu-hero-title {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.edu-hero-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3b4f6b;
+}
+
+.edu-hero-characters {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 빛나는 원 (glow ring) - 은은하게 숨쉬는 느낌 */
+.edu-hero-characters::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 18px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 50px rgba(255, 255, 255, 0.2),
+    0 0 100px rgba(147, 180, 255, 0.15);
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 255, 255, 0.2), 0 0 100px rgba(147, 180, 255, 0.15);
+    opacity: 0.85;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 70px rgba(255, 255, 255, 0.3), 0 0 120px rgba(147, 180, 255, 0.25);
+    opacity: 1;
+  }
+}
+
+.edu-hero-characters img {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.1));
+  transform: translate(-30px, -20px);
+}
+
+/* ===== 섹션 타이틀 ===== */
+.edu-section-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--gray-900);
+  margin: 0 0 24px 0;
+}
+
+/* 교육 플랫폼 타이틀: 3학년 뱃지와의 간격 */
+.edu-programs .edu-section-title {
+  margin-bottom: 16px;
+}
+
+/* ===== 교육 플랫폼 ===== */
+/* 6. 섹션 padding 80px 0으로 통일 */
+.edu-programs {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+/* 2. 학년별 배경 교차: 짝수 번째(4학년, 6학년) gray-50 배경 */
+/* grade-group 자체에 배경을 적용하면 컨테이너 너비에 묶이므로
+   음수 마진 + 패딩 기법으로 전체 너비 배경 처리 */
+.edu-grade-group {
+  margin-bottom: 0;
+  padding: 40px 0;
+}
+
+.edu-grade-group:last-child { padding-bottom: 0; }
+
+/* 짝수 번째 grade-group: 배경 없음 */
+
+.edu-grade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 20px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: rgba(13, 108, 249, 0.08);
+  color: var(--gray-900);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.edu-grade-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 2px rgba(13, 108, 249, 0.14);
+}
+
+.edu-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch; /* 2. 같은 행 내 카드 높이 통일 */
+}
+
+/* ===== 카드 ===== */
+/* 2. 같은 행 내 카드 높이 통일 */
+.edu-card {
+  background: #ffffff;
+  border: 1px solid var(--blue-200);
+  border-radius: 16px;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.06);
+  border-color: var(--blue-200);
+}
+
+.edu-card-cap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #eef5ff, #f7fbff);
+  color: var(--primary);
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.edu-card-cap::before {
+  content: "\2726";
+  font-size: 12px;
+  color: var(--primary);
+}
+
+.edu-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 8px;
+}
+
+.edu-card-text {
+  color: #758399;
+  margin-bottom: 0;
+}
+
+.edu-card-sub {
+  margin-top: 6px;
+  color: #758399;
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.edu-card-divider {
+  margin: 14px 0 0;
+  border: 0;
+  border-top: 2px dotted #aaa;
+}
+
+.edu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-top: auto; /* 2. 카드 높이 통일 시 가격 영역을 항상 하단에 고정 */
+}
+
+.edu-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gray-900);
+}
+
+.edu-price small {
+  font-size: 12px;
+  font-weight: 700;
+  color: #758399;
+  margin-left: 4px;
+}
+
+/* ===== 배너 ===== */
+/* 3. 배너 높이 160px, border-radius 16px */
+.edu-band {
+  padding: 0 0 40px;
+}
+
+.edu-band-inner {
+  height: 160px; /* 3. 100px → 160px */
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px; /* 3. 12px → 16px */
+}
+
+/* ===== 만족 보장 ===== */
+/* 6. padding 80px 0 통일 / 5-6. 배경 var(--blue-50) */
+.edu-assure {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.edu-assure-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.edu-assure-badge {
+  position: relative;
+  background: linear-gradient(135deg, #2f6ee6, #4a8dfc);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  /* 4. overflow visible → 마스코트 이미지가 카드 위로 튀어나와도 잘리지 않음 */
+  overflow: visible;
+  /* 4. min-height를 줄여 마스코트 절대위치와의 충돌 완화 */
+  min-height: 240px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.edu-assure-badge h3 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 900;
+}
+
+.edu-assure-badge h3 br + span,
+.edu-assure-badge h3 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.edu-assure-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.edu-assure-features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-assure-features li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  padding-left: 16px;
+  position: relative;
+  font-weight: 400;
+}
+
+.edu-assure-features li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+.edu-assure-mascot {
+  position: absolute;
+  /* 4. 마스코트를 카드 상단 중앙에 배치하여 클리핑 없이 자연스럽게 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  top: -120px;
+  width: 240px;
+  height: 240px;
+  pointer-events: none;
+}
+
+.edu-assure-mascot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+}
+
+.edu-assure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: stretch;
+}
+
+.edu-alist {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--blue-200);
+  border-radius: 16px;
+  padding: 24px 24px 24px 64px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edu-alist::before {
+  content: "\2713";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.edu-alist:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.edu-alist strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--gray-900);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.edu-alist p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+/* ===== FAQ ===== */
+/* 5. 하단 padding 80px 추가 / 6. 상단 padding도 80px 통일 */
+.edu-faq {
+  padding: 80px 0;
+  padding-bottom: 80px; /* 5. FAQ 하단 ↔ 풋터 여백 확보 */
+  background: var(--white);
+}
+
+.edu-faq-item {
+  background: #fff;
+  border: 1px solid #D6DEEA;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.edu-faq-item:hover,
+.edu-faq-item[open] {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(13, 108, 249, 0.1);
+}
+
+.edu-faq-item summary {
+  padding: 18px 22px;
+  font-weight: 800;
+  color: var(--gray-900);
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+  position: relative;
+}
+
+.edu-faq-item summary::-webkit-details-marker { display: none; }
+
+.edu-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #758399;
+}
+
+.edu-faq-item[open] summary::after {
+  content: "\2212";
+  color: var(--primary);
+}
+
+.edu-faq-item p {
+  padding: 0 22px 18px;
+  margin: 0;
+  color: #758399;
+  line-height: 1.6;
+}
+
+/* ===== Footer ===== */
+.edu-footer {
+  background: var(--gray-900);
+  padding: 60px 0 40px;
+}
+
+.edu-footer .footer-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.edu-footer .footer-info { max-width: 420px; }
+.edu-footer .footer-logo { margin-bottom: 24px; }
+.edu-footer .footer-details { font-size: 14px; line-height: 1.65; color: rgba(255, 255, 255, 0.35); }
+.edu-footer .footer-details strong { font-weight: 700; color: rgba(255, 255, 255, 0.5); }
+.edu-footer .footer-links-group { display: flex; gap: 80px; }
+.edu-footer .footer-col { display: flex; flex-direction: column; gap: 16px; }
+.edu-footer .footer-col a { font-size: 16px; color: rgba(255, 255, 255, 0.45); transition: color 0.2s; }
+.edu-footer .footer-col a:hover { color: var(--white); }
+.edu-footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; width: 100%; padding-top: 32px; }
+.edu-footer .copyright { font-size: 14px; color: rgba(255, 255, 255, 0.25); }
+.edu-footer .social-links { display: flex; align-items: center; gap: 24px; }
+.edu-footer .social-links a { font-size: 20px; color: rgba(255, 255, 255, 0.35); transition: color 0.2s; }
+.edu-footer .social-links a:hover { color: var(--white); }
+
+/* ===== Responsive: 태블릿 ===== */
+@media (max-width: 1024px) {
+  .edu-container { padding: 0 40px; }
+
+  .header-scrolled-edu .nav { display: none; }
+  .header-scrolled-edu .nav-cta { display: none; }
+  .header-scrolled-edu .mobile-menu-btn { display: flex; }
+
+  .edu-hero { padding: 100px 0 60px; }
+  .edu-hero-grid { flex-direction: column; text-align: center; }
+  .edu-hero-copy { max-width: 100%; }
+  .edu-hero-title { font-size: 36px; }
+  .edu-hero-characters { justify-content: center; }
+  .edu-hero-characters::before { width: 300px; height: 300px; }
+  .edu-hero-characters img { max-width: 340px; }
+
+  .edu-cards { grid-template-columns: repeat(2, 1fr); }
+
+
+  .edu-assure-grid { grid-template-columns: 1fr; }
+  /* 4. 태블릿: 마스코트 위치/크기 조정 */
+  .edu-assure-mascot { left: 50%; transform: translateX(-50%); top: -100px; width: 200px; height: 200px; }
+  .edu-assure-badge { min-height: 220px; }
+  .edu-assure-badge h3 { margin-top: 120px; }
+
+  .edu-footer .footer-mid { flex-direction: column; gap: 32px; }
+  .edu-footer .footer-links-group { gap: 40px; flex-wrap: wrap; }
+  .edu-footer .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+}
+
+/* ===== Responsive: 모바일 ===== */
+@media (max-width: 768px) {
+  .edu-container { padding: 0 20px; }
+
+  .edu-hero { padding: 80px 0 40px; }
+  .edu-hero-title { font-size: 26px; }
+  .edu-hero-sub { font-size: 15px; margin-bottom: 24px; }
+  .edu-hero-sub br { display: none; }
+  .edu-eyebrow { font-size: 12px; }
+  .edu-hero-grid { gap: 20px; }
+  .edu-hero-characters::before { width: 280px; height: 280px; border-width: 12px; }
+  .edu-hero-characters img { max-width: 320px; }
+
+  .edu-section-title { font-size: 22px; }
+  .edu-programs { padding: 40px 0; }
+  .edu-cards { grid-template-columns: 1fr; gap: 12px; }
+  .edu-card { padding: 24px 20px; }
+  .edu-card-title { font-size: 18px; }
+  .edu-price { font-size: 18px; }
+
+  .edu-grade-group {
+    padding: 32px 0;
+  }
+
+  /* 3. 모바일: 배너 높이 유지 */
+  .edu-band-inner { height: 100px; }
+
+  /* 4. 모바일: 만족 보장 마스코트 클리핑 방지 */
+  .edu-assure { padding: 60px 0 40px; }
+  .edu-assure-badge { padding: 20px; min-height: 180px; }
+  .edu-assure-badge h3 { font-size: 24px; margin-top: 100px; }
+  .edu-assure-mascot { left: 50%; transform: translateX(-50%); top: -80px; width: 160px; height: 160px; }
+  .edu-alist { padding: 16px 16px 16px 48px; }
+  .edu-alist::before { left: 12px; top: 12px; width: 24px; height: 24px; font-size: 14px; }
+
+  /* 5. 모바일: FAQ padding 유지 */
+  .edu-faq { padding: 40px 0 60px; }
+  .edu-faq-item summary { padding: 16px 18px; font-size: 15px; }
+  .edu-faq-item p { padding: 0 18px 16px; }
+
+  .edu-footer { padding: 40px 0 32px; }
+  .edu-footer .footer-mid { flex-direction: column; gap: 28px; }
+  .edu-footer .footer-links-group { gap: 32px; }
+  .edu-footer .footer-col { gap: 10px; }
+  .edu-footer .footer-col a { font-size: 14px; }
+  .edu-footer .footer-details { font-size: 13px; }
+  .edu-footer .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .edu-footer .footer-logo .logo-svg-white { height: 22px; }
+}
