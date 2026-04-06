@@ -178,6 +178,15 @@
     } else {
       header.classList.add('header-scrolled');
     }
+
+    // 어두운 배경 섹션 위일 때 헤더/사이드네비 흰색 전환
+    const darkSections = [9]; // summary 섹션
+    const footer = document.querySelector('.section-footer');
+    const footerIsDark = footer && !footer.classList.contains('footer-light');
+    const isDark = darkSections.includes(currentIndex) || (currentIndex === 10 && footerIsDark);
+    header.classList.toggle('header-on-dark', isDark);
+    const sideNav = document.querySelector('.side-nav');
+    if (sideNav) sideNav.classList.toggle('side-nav-on-dark', isDark);
   }
 
   // 사이드 네비 바 클릭
@@ -248,6 +257,19 @@
       mobileNav.classList.toggle('open');
     });
   }
+
+  // 푸터 시안 전환
+  document.querySelectorAll('.footer-variant-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const theme = btn.dataset.theme;
+      document.querySelectorAll('.footer-variant-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const footer = document.querySelector('.section-footer');
+      footer.classList.toggle('footer-light', theme === 'light');
+      if (isDesktop) updateIndicator();
+    });
+  });
 
   // 히어로 시안 전환
   document.querySelectorAll('.variant-btn').forEach(btn => {

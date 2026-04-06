@@ -185,7 +185,7 @@ html:has(.educlip-body) body {
 
 /* ===== 히어로 하단 배너 ===== */
 .edu-hero-banner {
-  padding: 40px 0 0;
+  padding-top: 48px;
   background: var(--white);
 }
 
