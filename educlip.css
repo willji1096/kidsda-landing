@@ -183,6 +183,24 @@ html:has(.educlip-body) body {
   transform: translate(-30px, -20px);
 }
 
+/* ===== 히어로 하단 배너 ===== */
+.edu-hero-banner {
+  padding: 40px 0 0;
+  background: var(--white);
+}
+
+.edu-hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .edu-hero-banner { padding: 24px 0 0; }
+  .edu-hero-banner img { border-radius: 12px; }
+}
+
 /* ===== 섹션 타이틀 ===== */
 .edu-section-title {
   font-size: 28px;
@@ -195,7 +213,7 @@ html:has(.educlip-body) body {
 
 /* 교육 플랫폼 타이틀: 3학년 뱃지와의 간격 */
 .edu-programs .edu-section-title {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 /* ===== 교육 플랫폼 ===== */
@@ -213,18 +231,19 @@ html:has(.educlip-body) body {
   padding: 40px 0;
 }
 
+.edu-grade-group:first-of-type { padding-top: 0; }
 .edu-grade-group:last-child { padding-bottom: 0; }
 
 /* 짝수 번째 grade-group: 배경 없음 */
 
 .edu-grade-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin: 0 0 20px;
-  padding: 9px 18px;
+  padding: 14px 20px;
   border-radius: 12px;
-  background: rgba(13, 108, 249, 0.08);
+  background: linear-gradient(135deg, #eef4ff, #f0f0ff);
   color: var(--gray-900);
   font-size: 17px;
   font-weight: 800;
@@ -233,8 +252,8 @@ html:has(.educlip-body) body {
 
 .edu-grade-badge::before {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--primary);
   box-shadow: 0 0 0 2px rgba(13, 108, 249, 0.14);
@@ -295,20 +314,24 @@ html:has(.educlip-body) body {
   margin-bottom: 8px;
 }
 
-.edu-card-text {
-  color: #758399;
-  margin-bottom: 0;
+.edu-card-subtitle {
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.edu-card-sub {
-  margin-top: 6px;
+.edu-card-teacher {
   color: #758399;
   font-size: 14px;
-  line-height: 1.6;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.edu-card-meta {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: #758399;
 }
 
 .edu-card-divider {
@@ -630,6 +653,9 @@ html:has(.educlip-body) body {
   .edu-cards { grid-template-columns: 1fr; gap: 12px; }
   .edu-card { padding: 24px 20px; }
   .edu-card-title { font-size: 18px; }
+  .edu-card-subtitle { font-size: 14px; }
+  .edu-card-teacher { font-size: 13px; }
+  .edu-card-meta { font-size: 12px; gap: 16px; }
   .edu-price { font-size: 18px; }
 
   .edu-grade-group {

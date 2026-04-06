@@ -19,7 +19,20 @@
     } else {
       // 모바일: 모든 reveal 즉시 표시
       sections.forEach(s => activateReveals(s));
+      updateMobileIndicator();
     }
+  }
+
+  // 모바일 스크롤 위치로 side-nav 인디케이터 업데이트
+  function updateMobileIndicator() {
+    const scrollY = window.scrollY + window.innerHeight * 0.4;
+    let activeIdx = 0;
+    sections.forEach((sec, i) => {
+      if (sec.offsetTop <= scrollY) activeIdx = i;
+    });
+    document.querySelectorAll('.side-nav-item').forEach((item, i) => {
+      item.classList.toggle('active', i === activeIdx);
+    });
   }
 
   function activateReveals(section) {
@@ -170,9 +183,21 @@
   // 사이드 네비 바 클릭
   document.querySelectorAll('.side-nav-item').forEach((item) => {
     item.addEventListener('click', () => {
-      goTo(parseInt(item.dataset.index));
+      const idx = parseInt(item.dataset.index);
+      if (isDesktop) {
+        goTo(idx);
+      } else {
+        // 모바일: 해당 섹션으로 스크롤
+        const target = sections[idx];
+        if (target) window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+      }
     });
   });
+
+  // 모바일 스크롤 리스너
+  window.addEventListener('scroll', () => {
+    if (!isDesktop) updateMobileIndicator();
+  }, { passive: true });
 
   // 패널 아이템 클릭
   document.querySelectorAll('.panel-item').forEach((item) => {
@@ -223,6 +248,28 @@
       mobileNav.classList.toggle('open');
     });
   }
+
+  // 히어로 시안 전환
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      // 버튼 활성화
+      document.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // 시안 전환
+      document.querySelectorAll('.hero-variant').forEach(v => {
+        v.classList.remove('hero-variant-active');
+        v.querySelectorAll('.scroll-reveal').forEach(r => r.classList.remove('visible'));
+      });
+      const next = document.querySelector('.hero-variant[data-variant="' + target + '"]');
+      next.classList.add('hero-variant-active');
+      // reveal 애니메이션 재실행
+      const reveals = next.querySelectorAll('.scroll-reveal');
+      reveals.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 120);
+      });
+    });
+  });
 
   init();
 })();
