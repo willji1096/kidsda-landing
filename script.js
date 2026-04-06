@@ -33,6 +33,14 @@
     document.querySelectorAll('.side-nav-item').forEach((item, i) => {
       item.classList.toggle('active', i === activeIdx);
     });
+
+    // 다크 섹션 위일 때 side-nav 흰색 전환
+    const darkSections = [9];
+    const footer = document.querySelector('.section-footer');
+    const footerIsDark = footer && !footer.classList.contains('footer-light');
+    const isDark = darkSections.includes(activeIdx) || (activeIdx === 10 && footerIsDark);
+    const sideNav = document.querySelector('.side-nav');
+    if (sideNav) sideNav.classList.toggle('side-nav-on-dark', isDark);
   }
 
   function activateReveals(section) {
