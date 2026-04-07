@@ -582,7 +582,36 @@ html:has(.educlip-body) body {
 .edu-footer {
   background: var(--gray-900);
   padding: 60px 0 40px;
+  position: relative;
 }
+
+/* 푸터 시안 전환 버튼 위치 조정 */
+.edu-footer .footer-variant-switcher {
+  top: 20px;
+  right: 40px;
+}
+
+/* 푸터 라이트 테마 */
+.edu-footer.footer-light { background: #f7f9fc; }
+.edu-footer.footer-light .logo-svg-white { filter: none; }
+.edu-footer.footer-light .footer-mid { border-bottom-color: rgba(0, 0, 0, 0.08); }
+.edu-footer.footer-light .footer-details { color: var(--gray-600); }
+.edu-footer.footer-light .footer-details strong { color: var(--gray-800); }
+.edu-footer.footer-light .footer-col a { color: var(--gray-600); }
+.edu-footer.footer-light .footer-col a:hover { color: var(--primary); }
+.edu-footer.footer-light .copyright { color: var(--gray-500); }
+.edu-footer.footer-light .social-links a { color: var(--gray-500); }
+.edu-footer.footer-light .social-links a:hover { color: var(--primary); }
+.edu-footer.footer-light .blog-icon img { filter: brightness(0); opacity: 0.5; }
+.edu-footer.footer-light .blog-icon:hover img { opacity: 1; }
+.edu-footer.footer-light .footer-variant-switcher {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.edu-footer.footer-light .footer-variant-btn { color: var(--gray-500); }
+.edu-footer.footer-light .footer-variant-btn:hover { color: var(--gray-800); }
+.edu-footer.footer-light .footer-variant-btn.active { color: #fff; }
 
 .edu-footer .footer-mid {
   display: flex;

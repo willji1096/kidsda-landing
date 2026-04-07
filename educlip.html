@@ -310,6 +310,10 @@
 
   <!-- Footer -->
   <footer class="edu-footer">
+    <div class="footer-variant-switcher">
+      <button type="button" class="footer-variant-btn active" data-theme="dark">다크</button>
+      <button type="button" class="footer-variant-btn" data-theme="light">라이트</button>
+    </div>
     <div class="edu-container">
       <div class="footer-mid">
         <div class="footer-info">
@@ -368,6 +372,17 @@
     // FAQ 토글
     document.querySelectorAll('.edu-faq-item').forEach(item => {
       item.addEventListener('toggle', () => {});
+    });
+
+    // 푸터 시안 전환
+    document.querySelectorAll('.footer-variant-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const theme = btn.dataset.theme;
+        document.querySelectorAll('.footer-variant-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector('.edu-footer').classList.toggle('footer-light', theme === 'light');
+      });
     });
   </script>
 </body>
