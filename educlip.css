@@ -82,38 +82,15 @@ html:has(.educlip-body) body {
   position: relative;
 }
 
-/* 히어로 동그라미 ON/OFF 토글 버튼 */
-.hero-ring-switcher {
-  position: absolute;
+/* 에듀클립 히어로 동그라미 토글 — 위치만 오버라이드 (스타일은 .hero-variant-switcher 공통) */
+.edu-ring-switcher {
+  bottom: auto !important;
   top: 100px;
+  left: auto;
   right: 40px;
-  display: flex;
-  gap: 4px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 999px;
-  padding: 4px;
-  z-index: 10;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-.hero-ring-btn {
-  border: none;
-  background: transparent;
-  color: var(--gray-600, #6B7280);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-.hero-ring-btn:hover { color: var(--gray-800, #1F2937); }
-.hero-ring-btn.active {
-  background: var(--primary, #155DFC);
-  color: #fff;
+  transform: none;
+  z-index: 50;
+  pointer-events: auto;
 }
 
 /* 동그라미 OFF 상태: glow ring 숨김 */
