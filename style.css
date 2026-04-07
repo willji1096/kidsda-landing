@@ -806,14 +806,19 @@ a { text-decoration: none; color: inherit; }
 
 .phone-mockup-wrap {
   flex-shrink: 0;
-  width: 400px;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .phone-screen-img {
-  width: 100%;
-  height: auto;
-  max-height: 620px;
+  width: auto;
+  height: 620px;
+  max-width: 100%;
+  max-height: 72vh;
   object-fit: contain;
+  display: block;
 }
 
 /* ===== Label Row (NEW + 라벨 가로 배치) ===== */
@@ -1315,7 +1320,8 @@ a { text-decoration: none; color: inherit; }
   .feature-layout { flex-direction: column; gap: 40px; }
   .feature-text { min-width: 0; order: -1; }
   .feature-layout-phone { flex-direction: column; gap: 40px; }
-  .phone-mockup-wrap { width: 100%; max-width: 300px; margin: 0 auto; order: 1; }
+  .phone-mockup-wrap { width: 100%; max-width: 280px; margin: 0 auto; order: 1; }
+  .phone-mockup-wrap .phone-screen-img { width: 100%; height: auto; max-height: 56vh; }
 
   /* 피처 카드 */
   .feature-cards { width: 100%; max-width: 100%; }
@@ -1403,7 +1409,7 @@ a { text-decoration: none; color: inherit; }
 
   /* 폰 목업 */
   .phone-mockup-wrap { max-width: 100%; width: 100%; display: flex; justify-content: center; }
-  .phone-screen-img { max-height: none; max-width: 75%; }
+  .phone-screen-img { width: auto; height: auto; max-height: 50vh; max-width: 70%; }
   .hero-image img { max-height: none; max-width: 90%; margin: 0 auto; display: block; }
 
   /* 피처 카드 */
