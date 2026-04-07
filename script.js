@@ -3,7 +3,7 @@
 // 태블릿/모바일(1024px 이하)에서는 일반 스크롤로 전환
 
 (function () {
-  const BREAKPOINT = 1024;
+  const BREAKPOINT = 0; // 모바일에서도 풀페이지 스크롤 사용
   const container = document.querySelector('.page-container');
   const sections = document.querySelectorAll('.scroll-section');
   let currentIndex = 0;

@@ -209,7 +209,7 @@ a { text-decoration: none; color: inherit; }
 /* ===== Side Nav (우측 배민 스타일 - 콘텐츠 영역 끝) ===== */
 .side-nav {
   position: fixed;
-  right: 24px;
+  right: 80px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 998;
@@ -1253,13 +1253,8 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== Responsive: 태블릿 (1024px 이하) ===== */
 @media (max-width: 1024px) {
-  /* 일반 스크롤 전환 */
-  html, body { height: auto; overflow: auto; }
-  body { position: static; }
-  .page-container { transition: none !important; transform: none !important; }
-  .scroll-section { height: auto; min-height: 0; overflow: visible; padding: 80px 0; }
+  /* 모바일/태블릿도 풀페이지 스크롤 유지 (height/overflow override 제거) */
   .section-hero { padding-top: 80px; }
-  .scroll-reveal { opacity: 1; transform: none; }
   /* 모바일: side-nav 컴팩트 버전 표시 */
   .side-nav {
     left: auto;
@@ -1346,8 +1341,7 @@ a { text-decoration: none; color: inherit; }
   .stats-row { gap: 24px; }
 
   /* Footer */
-  .section-footer { height: auto !important; }
-  .section-footer .section-content { height: auto; padding-top: 48px; padding-bottom: 40px; }
+  .section-footer .section-content { padding-top: 48px; padding-bottom: 40px; }
   .footer-cta-title { font-size: 28px; }
   .footer-cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
   .footer-cta-buttons .btn-store-white { width: 100%; max-width: 320px; justify-content: center; }
