@@ -502,8 +502,8 @@ a { text-decoration: none; color: inherit; }
 
 /* 시안 1: 목업 1개 단독 */
 .hero-image-single img {
-  max-width: 480px;
-  max-height: 85vh;
+  max-width: 360px;
+  max-height: 78vh;
 }
 
 /* 시안 2: 목업 2개 좌우 대칭 (왼쪽 로고화면 위로) */
@@ -521,14 +521,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-image-double .hero-mock {
-  width: 380px;
+  width: 300px;
   height: auto;
   object-fit: contain;
+  max-height: 78vh;
 }
 
 .hero-image-double .hero-mock-left {
-  margin-right: -90px;
-  transform: translateY(-50px);
+  margin-right: -70px;
+  transform: translateY(-40px);
   position: relative;
   z-index: 2;
 }
