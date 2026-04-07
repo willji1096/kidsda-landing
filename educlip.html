@@ -41,6 +41,10 @@
   <main>
     <!-- Hero -->
     <section class="edu-hero">
+      <div class="hero-ring-switcher">
+        <button type="button" class="hero-ring-btn active" data-ring="on">동그라미 ON</button>
+        <button type="button" class="hero-ring-btn" data-ring="off">동그라미 OFF</button>
+      </div>
       <div class="edu-container edu-hero-grid">
         <div class="edu-hero-copy">
           <span class="edu-eyebrow"><i class="fas fa-play-circle"></i> 에듀클립 온라인 특강</span>
@@ -372,6 +376,16 @@
     // FAQ 토글
     document.querySelectorAll('.edu-faq-item').forEach(item => {
       item.addEventListener('toggle', () => {});
+    });
+
+    // 히어로 동그라미 ON/OFF 토글
+    const eduHero = document.querySelector('.edu-hero');
+    document.querySelectorAll('.hero-ring-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.hero-ring-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        eduHero.classList.toggle('ring-off', btn.dataset.ring === 'off');
+      });
     });
 
     // 푸터 시안 전환
