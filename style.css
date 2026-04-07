@@ -501,6 +501,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* 시안 1: 목업 1개 단독 */
+.hero-variant[data-variant="1"] .hero-layout { gap: 16px; }
 .hero-image-single img {
   max-width: 360px;
   max-height: 78vh;
@@ -528,7 +529,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-image-double .hero-mock-left {
-  margin-right: -70px;
   transform: translateY(-40px);
   position: relative;
   z-index: 2;
@@ -1300,7 +1300,7 @@ a { text-decoration: none; color: inherit; }
   .hero-image-single img { max-width: 380px; max-height: 560px; }
   .hero-image-double { gap: 0; }
   .hero-image-double .hero-mock { width: 280px; }
-  .hero-image-double .hero-mock-left { margin-right: -60px; transform: translateY(-32px); }
+  .hero-image-double .hero-mock-left { margin-right: 6px; transform: translateY(-32px); }
   .hero-image-triple { width: 480px; height: 460px; }
   .hero-image-triple .hero-mock { max-width: 200px; max-height: 400px; }
   .hero-image-triple .hero-mock-left { transform: translate(-130px, 24px) rotate(-8deg) scale(0.9); }
@@ -1399,7 +1399,7 @@ a { text-decoration: none; color: inherit; }
     max-width: 55%;
     height: auto;
   }
-  .hero-image-double .hero-mock-left { margin-right: -36px; transform: translateY(-14px); }
+  .hero-image-double .hero-mock-left { margin-right: 4px; transform: translateY(-14px); }
   .hero-variant[data-variant="2"] .hero-text { max-width: 100%; }
   .hero-variant[data-variant="2"] .hero-title { font-size: 26px; }
   .hero-image-triple { width: 340px; height: 380px; }
