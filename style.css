@@ -237,7 +237,7 @@ a { text-decoration: none; color: inherit; }
   display: block;
   width: 12px;
   height: 4px;
-  background: rgba(21, 93, 252, 0.25);
+  background: #c4c4c4;
   border: none;
   border-radius: 2px;
   cursor: pointer;
@@ -247,7 +247,7 @@ a { text-decoration: none; color: inherit; }
 
 .side-nav-item.active .side-nav-bar {
   width: 20px;
-  background: var(--primary);
+  background: #111;
 }
 
 /* 어두운 배경 위 side-nav: 흰색 */
@@ -505,6 +505,8 @@ a { text-decoration: none; color: inherit; }
 .hero-image-single img {
   max-width: 360px;
   max-height: 78vh;
+  /* PNG 좌측 44px 투명 패딩 보정: 시각적 중앙 정렬 */
+  transform: translateX(-5%);
 }
 
 /* 시안 2: 목업 2개 좌우 대칭 (왼쪽 로고화면 위로) */
@@ -526,10 +528,12 @@ a { text-decoration: none; color: inherit; }
   height: auto;
   object-fit: contain;
   max-height: 78vh;
+  /* PNG 좌측 44px 투명 패딩 보정 */
+  transform: translateX(-5%);
 }
 
 .hero-image-double .hero-mock-left {
-  transform: translateY(-40px);
+  transform: translate(-5%, -40px);
   position: relative;
   z-index: 2;
 }
