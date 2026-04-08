@@ -478,9 +478,9 @@ html:has(.educlip-body) body {
 .edu-assure-mascot {
   position: absolute;
   /* 4. 마스코트를 카드 상단 중앙에 배치하여 클리핑 없이 자연스럽게 표시 */
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
-  top: -120px;
+  top: -157px;
   width: 240px;
   height: 240px;
   pointer-events: none;
@@ -688,6 +688,7 @@ html:has(.educlip-body) body {
   .edu-assure-grid { grid-template-columns: 1fr; }
   .edu-assure-badge { min-height: auto; padding: 28px; }
   .edu-assure-badge h3 { margin-top: 0; font-size: 28px; }
+  .edu-assure-mascot { left: 65%; top: -130px; width: 200px; height: 200px; }
 
   .edu-footer .footer-mid { flex-direction: column; gap: 32px; }
   .edu-footer .footer-links-group { gap: 40px; flex-wrap: wrap; }
@@ -728,6 +729,7 @@ html:has(.educlip-body) body {
   .edu-assure { padding: 48px 0; }
   .edu-assure-badge { padding: 24px; min-height: auto; border-radius: 12px; }
   .edu-assure-badge h3 { font-size: 22px; margin-top: 0; }
+  .edu-assure-mascot { left: 72%; top: -95px; width: 150px; height: 150px; }
   .edu-assure-desc { font-size: 14px; margin-bottom: 20px; }
   .edu-assure-features li { font-size: 13px; }
   .edu-alist { padding: 20px 20px 20px 52px; }
