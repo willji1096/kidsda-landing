@@ -299,8 +299,12 @@
           <div class="edu-assure-badge">
             <div class="edu-assure-mascot">
               <img src="assets/educlip-feature2.png" alt="에듀클립 마스코트">
+              <div class="edu-title-switcher" role="group" aria-label="제목 시안 전환">
+                <button type="button" class="title-variant-btn" data-title="two">2줄</button>
+                <button type="button" class="title-variant-btn active" data-title="one">1줄</button>
+              </div>
             </div>
-            <h3>전국 영어 · 수학<br>학력경시대회</h3>
+            <h3 class="edu-assure-title">전국 영어 · 수학 학력경시대회</h3>
             <p class="edu-assure-desc">수학경시대회 전문 강사를 통한 깊이있는 기출문제 특강,<br>난이도별 맞춤 강의로 문제 해결 접근법과 실전 감각을 키워줍니다.</p>
             <ul class="edu-assure-features">
               <li>기출문제 풀이를 통한 출제경향 및 문제유형 파악, 시험 철저대비</li>
@@ -430,6 +434,21 @@
         ringBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         eduHero.classList.toggle('ring-off', btn.dataset.ring === 'off');
+      });
+    });
+
+    // 학력경시대회 제목 줄바꿈 토글 (1줄 / 2줄)
+    const assureTitle = document.querySelector('.edu-assure-title');
+    document.querySelectorAll('.title-variant-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.title-variant-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (btn.dataset.title === 'two') {
+          assureTitle.innerHTML = '전국 영어 · 수학<br>학력경시대회';
+        } else {
+          assureTitle.textContent = '전국 영어 · 수학 학력경시대회';
+        }
       });
     });
 

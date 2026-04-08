@@ -431,6 +431,31 @@ html:has(.educlip-body) body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* 상단 우측 모서리 장식 원 — 흰색 그라데이션, 옅게 */
+.edu-assure-badge::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.06) 55%,
+    rgba(255, 255, 255, 0) 78%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 카드 내부 콘텐츠는 장식 원 위에 표시 */
+.edu-assure-badge > * {
+  position: relative;
+  z-index: 1;
+}
+
 .edu-assure-badge h3 {
   margin: 0 0 20px;
   font-size: 32px;
@@ -491,6 +516,43 @@ html:has(.educlip-body) body {
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
+}
+
+/* 학력경시대회 제목 시안 토글 (1줄 / 2줄) — 마스코트 옆에 노출 */
+.edu-title-switcher {
+  position: absolute;
+  top: 50%;
+  right: -110px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  pointer-events: auto;
+  z-index: 5;
+}
+
+.title-variant-btn {
+  border: 0;
+  background: transparent;
+  color: #2f6ee6;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.title-variant-btn:hover {
+  background: rgba(47, 110, 230, 0.12);
+}
+
+.title-variant-btn.active {
+  background: #2f6ee6;
+  color: #fff;
 }
 
 .edu-assure-list {
