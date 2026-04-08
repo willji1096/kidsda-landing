@@ -304,7 +304,7 @@
                 <button type="button" class="title-variant-btn active" data-title="one">1줄</button>
               </div>
             </div>
-            <h3 class="edu-assure-title">전국 영어 · 수학 학력경시대회</h3>
+            <h3 class="edu-assure-title is-one-line">전국 영어 · 수학 학력경시대회</h3>
             <p class="edu-assure-desc">수학경시대회 전문 강사를 통한 깊이있는 기출문제 특강,<br>난이도별 맞춤 강의로 문제 해결 접근법과 실전 감각을 키워줍니다.</p>
             <ul class="edu-assure-features">
               <li>기출문제 풀이를 통한 출제경향 및 문제유형 파악, 시험 철저대비</li>
@@ -446,8 +446,10 @@
         btn.classList.add('active');
         if (btn.dataset.title === 'two') {
           assureTitle.innerHTML = '전국 영어 · 수학<br>학력경시대회';
+          assureTitle.classList.remove('is-one-line');
         } else {
           assureTitle.textContent = '전국 영어 · 수학 학력경시대회';
+          assureTitle.classList.add('is-one-line');
         }
       });
     });

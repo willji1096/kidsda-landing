@@ -464,6 +464,11 @@ html:has(.educlip-body) body {
   font-weight: 900;
 }
 
+/* 한 줄 시안일 때 가운데 정렬 */
+.edu-assure-badge h3.is-one-line {
+  text-align: center;
+}
+
 .edu-assure-badge h3 br + span,
 .edu-assure-badge h3 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
