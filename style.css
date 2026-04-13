@@ -996,7 +996,7 @@ a { text-decoration: none; color: inherit; }
   background: var(--white);
   border: 1px solid var(--gray-100);
   border-radius: 16px;
-  padding: 14px 14px 12px 16px;
+  padding: 24px 20px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -1033,7 +1033,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .news-c-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--gray-900);
 }
@@ -1055,16 +1055,15 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-/* 시안 C: 각진 사각형, 오렌지 테두리만 */
+/* 시안 C: 파란 배경 pill */
 .news-c .new-badge {
-  background: none;
-  color: #ee5a24;
-  border: 1.5px solid #ee5a24;
-  border-radius: 4px;
-  font-size: 10px;
-  padding: 2px 7px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 9999px;
+  font-size: 11px;
+  padding: 3px 10px;
   box-shadow: none;
-  font-weight: 800;
 }
 
 .news-c-featured .new-badge {
