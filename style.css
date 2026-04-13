@@ -724,23 +724,25 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== 01 뉴스 리디자인 — 타이틀 + CTA 가로 배치, 카드 1+2+2 ===== */
 
-.news-label-row {
+.news-desc-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 24px;
+  margin-bottom: 8px;
 }
 
-.news-label-row .section-label {
+.news-desc-row .section-desc {
   margin-bottom: 0;
 }
 
-.news-label-row .btn-primary {
+.news-desc-row .btn-primary {
+  flex-shrink: 0;
   margin-top: 0;
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 14px 24px;
+  font-size: 16px;
   gap: 8px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 
@@ -780,7 +782,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .news-card h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 4px;
@@ -789,13 +791,17 @@ a { text-decoration: none; color: inherit; }
   gap: 8px;
 }
 
+/* 시안 A: 둥근 pill, 파란 배경 */
 .news-card h4 .new-badge {
-  font-size: 12px;
-  padding: 4px 12px;
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--primary);
+  border-radius: 9999px;
+  box-shadow: none;
 }
 
 .news-card p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gray-500);
   line-height: 1.5;
 }
@@ -831,6 +837,239 @@ a { text-decoration: none; color: inherit; }
 
 .news-card-horizontal .news-card-text h4 {
   margin-bottom: 2px;
+}
+
+/* ===== 뉴스 시안 토글 ===== */
+.news-variant-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  margin-top: 24px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-variant-btn {
+  border: 0;
+  background: transparent;
+  color: var(--gray-500);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.news-variant-btn:hover {
+  color: var(--gray-800);
+}
+
+.news-variant-btn.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* 시안 전환: 비활성 숨김 */
+.news-variant { display: none !important; }
+.news-variant.news-variant-active { display: flex !important; }
+
+/* ===== 시안 B: 리스트형 ===== */
+.news-b {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-b li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.news-b li > i {
+  font-size: 20px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.news-b li strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-b li p {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.news-b li .new-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+}
+
+/* ===== 시안 C: 넘버 + 타이포 계층형 ===== */
+/* 원리: 01 피처(영어 번역)를 풀너비 강조 카드로 앵커링, 나머지 4개는 2x2 그리드.
+   각 셀에 크게 표시된 넘버 + 제목 + 설명이 타이포그래피 크기 차이로 계층을 형성.
+   아이콘은 배경 레이어에 반투명으로 깔려 카드 정체성을 부여 — 원형 컨테이너 없이.
+   이는 AI Slop #2(3열 그리드), #3(원 안 아이콘)을 회피하며 넘버링으로 순서 의미를 부여. */
+.news-c {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 01 강조 카드 — flex-direction: row 명시 (일반 카드 column을 override) */
+.news-c-featured {
+  position: relative;
+  background: var(--primary);
+  border-radius: 18px;
+  padding: 20px 20px 20px 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-c-featured .news-c-num {
+  font-size: 38px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+  letter-spacing: -2px;
+  flex-shrink: 0;
+}
+
+.news-c-featured .news-c-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.news-c-featured .news-c-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.news-c-featured .news-c-bg-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 52px;
+  color: rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+
+/* 2x2 그리드 */
+.news-c-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* 일반 카드 */
+.news-c-item {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 18px 16px 16px 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.2s;
+}
+
+.news-c-item:not(.news-c-featured):hover {
+  border-color: var(--blue-200);
+}
+
+.news-c-num {
+  font-size: 28px;
+  font-weight: 900;
+  color: rgba(21,93,252,0.12);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.news-c-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.news-c-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.news-c-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.news-c-desc {
+  font-size: 16px;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+.news-c-bg-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 36px;
+  color: rgba(21,93,252,0.06);
+  pointer-events: none;
+}
+
+/* 시안 C: 각진 사각형, 오렌지 테두리만 */
+.news-c .new-badge {
+  background: none;
+  color: #ee5a24;
+  border: 1.5px solid #ee5a24;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 2px 7px;
+  box-shadow: none;
+  font-weight: 800;
+}
+
+.news-c-featured .new-badge {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* ===== 미니 카드 그리드 (01 뉴스 - 폰 목업 병행) ===== */
@@ -1526,13 +1765,11 @@ a { text-decoration: none; color: inherit; }
   /* 뉴스 섹션 모바일: 목업 숨김, 카드 1열 풀너비 */
   .section-news .phone-mockup-wrap { display: none; }
   .section-news .feature-text { display: flex; flex-direction: column; }
-  .section-news .news-label-row { display: contents; }
-  .section-news .news-label-row .section-label { order: 1; margin-bottom: 8px; }
-  .section-news .section-title { order: 2; }
+  .section-news .news-desc-row { display: contents; }
   .section-news .section-desc { order: 3; }
-  .section-news .news-feature-cards { order: 4; }
-  .section-news .news-label-row .btn-primary {
-    order: 5;
+  .section-news .news-variant { order: 4; }
+  .section-news .news-desc-row .btn-primary {
+    order: 6;
     width: 100%;
     justify-content: center;
     padding: 14px 24px;
@@ -1556,6 +1793,31 @@ a { text-decoration: none; color: inherit; }
   .section-news .news-card h4 .new-badge { font-size: 10px; padding: 2px 8px; }
   .section-news .news-card-horizontal { gap: 14px; }
   .section-news .news-card-horizontal .card-icon { margin-bottom: 0; }
+
+  /* 뉴스 시안 B 모바일 (타임라인형) */
+  .section-news .news-b { margin-top: 12px; gap: 8px; }
+  .section-news .news-b li { padding: 12px 14px; gap: 12px; }
+  .section-news .news-b li > i { font-size: 16px; }
+  .section-news .news-b li strong { font-size: 15px; }
+  .section-news .news-b li p { font-size: 13px; }
+  .section-news .news-b-icon { width: 34px; height: 34px; font-size: 14px; border-radius: 10px; }
+  .section-news .news-b-item.news-b-featured .news-b-icon { width: 38px; height: 38px; font-size: 16px; }
+  .section-news .news-b-item.news-b-featured .news-b-node { width: 38px; }
+  .section-news .news-b-node { width: 34px; }
+  .section-news .news-b-title { font-size: 15px; }
+  .section-news .news-b-item.news-b-featured .news-b-title { font-size: 16px; }
+  .section-news .news-b-desc { font-size: 13px; }
+  .section-news .news-b-body { padding-bottom: 14px; padding-top: 6px; }
+  .section-news .news-b-item.news-b-featured .news-b-body { padding-bottom: 16px; padding-top: 8px; }
+
+  /* 뉴스 시안 C 모바일 */
+  .section-news .news-c { margin-top: 12px; gap: 8px; }
+  .section-news .news-c-grid { gap: 8px; }
+  .section-news .news-c-item { padding: 14px 12px 12px 14px; border-radius: 14px; }
+  .section-news .news-c-num { font-size: 22px; margin-bottom: 6px; }
+  .section-news .news-c-title { font-size: 15px; }
+  .section-news .news-c-desc { font-size: 13px; }
+  .section-news .news-c-bg-icon { font-size: 28px; right: 8px; bottom: 8px; }
 
   /* 피처 카드 */
   .feature-card { padding: 24px 20px; border-radius: 16px; }

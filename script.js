@@ -301,5 +301,18 @@
     });
   });
 
+  // 뉴스 섹션 시안 토글 (카드 / 리스트)
+  document.querySelectorAll('.news-variant-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const variant = btn.dataset.variant;
+      document.querySelectorAll('.news-variant-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.news-variant').forEach(v => {
+        v.classList.toggle('news-variant-active', v.dataset.newsVariant === variant);
+      });
+    });
+  });
+
   init();
 })();
