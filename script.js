@@ -130,12 +130,12 @@
     wheelAccumulator += e.deltaY;
     clearTimeout(wheelTimeout);
     wheelTimeout = setTimeout(() => {
-      if (Math.abs(wheelAccumulator) > 30) {
+      if (Math.abs(wheelAccumulator) > 60) {
         if (wheelAccumulator > 0) goNext();
         else goPrev();
       }
       wheelAccumulator = 0;
-    }, 50);
+    }, 80);
   }
 
   // Touch (데스크톱만)

@@ -722,6 +722,117 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.5;
 }
 
+/* ===== 01 뉴스 리디자인 — 타이틀 + CTA 가로 배치, 카드 1+2+2 ===== */
+
+.news-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.news-label-row .section-label {
+  margin-bottom: 0;
+}
+
+.news-label-row .btn-primary {
+  margin-top: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  gap: 8px;
+  border-radius: 10px;
+}
+
+
+.news-feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.news-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.news-card .card-icon {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.news-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-card h4 .new-badge {
+  font-size: 12px;
+  padding: 4px 12px;
+}
+
+.news-card p {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+/* 상단 풀 너비 카드 (영어 번역) */
+.news-card-full {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.news-card-full .card-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.news-card-full .news-card-text h4 {
+  margin-bottom: 2px;
+}
+
+/* 2x2 카드도 아이콘 왼쪽 + 텍스트 오른쪽 가로 배치 */
+.news-card-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-card-horizontal .card-icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.news-card-horizontal .news-card-text h4 {
+  margin-bottom: 2px;
+}
+
 /* ===== 미니 카드 그리드 (01 뉴스 - 폰 목업 병행) ===== */
 .feature-card-grid-mini {
   display: grid;
@@ -1323,6 +1434,7 @@ a { text-decoration: none; color: inherit; }
   .phone-mockup-wrap { width: 100%; max-width: 280px; margin: 0 auto; order: 1; }
   .phone-mockup-wrap .phone-screen-img { width: 100%; height: auto; max-height: 56vh; }
 
+
   /* 피처 카드 */
   .feature-cards { width: 100%; max-width: 100%; }
   .feature-card-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -1384,7 +1496,7 @@ a { text-decoration: none; color: inherit; }
   .section-hero { padding-bottom: 56px; }
 
   /* 모바일 목업 배치 */
-  .hero-image-single img { max-width: 300px; max-height: 480px; }
+  .hero-image-single img { max-width: 220px; max-height: 380px; }
   .hero-image-double {
     gap: 0;
     justify-content: center;
@@ -1411,12 +1523,47 @@ a { text-decoration: none; color: inherit; }
   .phone-screen-img { width: auto; height: auto; max-height: 50vh; max-width: 70%; }
   .hero-image img { max-height: none; max-width: 90%; margin: 0 auto; display: block; }
 
+  /* 뉴스 섹션 모바일: 목업 숨김, 카드 1열 풀너비 */
+  .section-news .phone-mockup-wrap { display: none; }
+  .section-news .feature-text { display: flex; flex-direction: column; }
+  .section-news .news-label-row { display: contents; }
+  .section-news .news-label-row .section-label { order: 1; margin-bottom: 8px; }
+  .section-news .section-title { order: 2; }
+  .section-news .section-desc { order: 3; }
+  .section-news .news-feature-cards { order: 4; }
+  .section-news .news-label-row .btn-primary {
+    order: 5;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+  .section-news .news-feature-cards { margin-top: 16px; gap: 8px; }
+  .section-news .news-card-row { grid-template-columns: 1fr; gap: 8px; }
+  .section-news .news-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+  .section-news .news-card .card-icon { width: 36px; height: 36px; font-size: 16px; border-radius: 10px; margin-bottom: 0; flex-shrink: 0; }
+  .section-news .news-card h4 { font-size: 15px; }
+  .section-news .news-card p { font-size: 13px; }
+  .section-news .news-card h4 .new-badge { font-size: 10px; padding: 2px 8px; }
+  .section-news .news-card-horizontal { gap: 14px; }
+  .section-news .news-card-horizontal .card-icon { margin-bottom: 0; }
+
   /* 피처 카드 */
   .feature-card { padding: 24px 20px; border-radius: 16px; }
   .feature-card h4 { font-size: 17px; }
   .feature-card p { font-size: 14px; }
   .card-icon { width: 44px; height: 44px; font-size: 20px; border-radius: 12px; margin-bottom: 12px; }
   .btn-primary { font-size: 16px; padding: 14px 28px; margin-top: 20px; }
+
 
   /* NEW 뱃지 */
   .new-badge { font-size: 13px; padding: 5px 14px; }
