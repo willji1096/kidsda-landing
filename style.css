@@ -934,8 +934,8 @@ a { text-decoration: none; color: inherit; }
 .news-c {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 /* 01 강조 카드 — flex-direction: row 명시 (일반 카드 column을 override) */
@@ -987,7 +987,7 @@ a { text-decoration: none; color: inherit; }
 .news-c-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 /* 일반 카드 */
@@ -996,7 +996,7 @@ a { text-decoration: none; color: inherit; }
   background: var(--white);
   border: 1px solid var(--gray-100);
   border-radius: 16px;
-  padding: 18px 16px 16px 18px;
+  padding: 14px 14px 12px 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1009,13 +1009,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 .news-c-num {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   color: rgba(21,93,252,0.12);
   line-height: 1;
   letter-spacing: -1.5px;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .news-c-content {
