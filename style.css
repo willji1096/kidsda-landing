@@ -999,8 +999,9 @@ a { text-decoration: none; color: inherit; }
   padding: 14px 14px 12px 16px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
   transition: border-color 0.2s;
 }
 
@@ -1014,8 +1015,8 @@ a { text-decoration: none; color: inherit; }
   color: rgba(21,93,252,0.12);
   line-height: 1;
   letter-spacing: -1.5px;
-  display: block;
-  margin-bottom: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .news-c-content {
