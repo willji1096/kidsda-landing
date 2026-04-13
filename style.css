@@ -804,6 +804,7 @@ a { text-decoration: none; color: inherit; }
   font-size: 16px;
   color: var(--gray-500);
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 /* 상단 풀 너비 카드 (영어 번역) */
