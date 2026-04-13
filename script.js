@@ -127,15 +127,16 @@
   function onWheel(e) {
     if (!isDesktop) return;
     e.preventDefault();
+    if (isAnimating) return;
     wheelAccumulator += e.deltaY;
     clearTimeout(wheelTimeout);
     wheelTimeout = setTimeout(() => {
-      if (Math.abs(wheelAccumulator) > 60) {
+      if (Math.abs(wheelAccumulator) > 40) {
         if (wheelAccumulator > 0) goNext();
         else goPrev();
       }
       wheelAccumulator = 0;
-    }, 80);
+    }, 30);
   }
 
   // Touch (데스크톱만)
