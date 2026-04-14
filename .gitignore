@@ -4,3 +4,6 @@
 .claude/
 .DS_Store
 label-preview.html
+
+# Figma 캡처용 정적 변환본 - 배포 제외
+*-static.html
