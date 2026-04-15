@@ -3,7 +3,7 @@
 // 태블릿/모바일(1024px 이하)에서는 일반 스크롤로 전환
 
 (function () {
-  const BREAKPOINT = 0; // 모바일에서도 풀페이지 스크롤 사용
+  const BREAKPOINT = 1024; // 1024px 이하는 일반 스크롤로 전환 (모바일 대응)
   const container = document.querySelector('.page-container');
   const sections = document.querySelectorAll('.scroll-section');
   let currentIndex = 0;
@@ -298,19 +298,6 @@
       const reveals = next.querySelectorAll('.scroll-reveal');
       reveals.forEach((el, i) => {
         setTimeout(() => el.classList.add('visible'), i * 120);
-      });
-    });
-  });
-
-  // 뉴스 섹션 시안 토글 (카드 / 리스트)
-  document.querySelectorAll('.news-variant-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const variant = btn.dataset.variant;
-      document.querySelectorAll('.news-variant-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('.news-variant').forEach(v => {
-        v.classList.toggle('news-variant-active', v.dataset.newsVariant === variant);
       });
     });
   });
