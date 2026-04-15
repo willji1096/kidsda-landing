@@ -3,7 +3,7 @@
 // 태블릿/모바일(1024px 이하)에서는 일반 스크롤로 전환
 
 (function () {
-  const BREAKPOINT = 1024; // 1024px 이하는 일반 스크롤로 전환 (모바일 대응)
+  const BREAKPOINT = 1024; // 1024px 이하는 CSS scroll-snap으로 전환
   const container = document.querySelector('.page-container');
   const sections = document.querySelectorAll('.scroll-section');
   let currentIndex = 0;
@@ -17,9 +17,41 @@
       activateReveals(sections[0]);
       updateIndicator();
     } else {
-      // 모바일: 모든 reveal 즉시 표시
-      sections.forEach(s => activateReveals(s));
+      // 모바일: IntersectionObserver로 스크롤 시 순차 reveal
+      setupMobileReveal();
       updateMobileIndicator();
+    }
+  }
+
+  // 모바일 스크롤 reveal (IntersectionObserver)
+  function setupMobileReveal() {
+    const reveals = document.querySelectorAll('.scroll-reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const section = el.closest('.scroll-section');
+          const siblings = section ? Array.from(section.querySelectorAll('.scroll-reveal')) : [el];
+          const idx = siblings.indexOf(el);
+          setTimeout(() => el.classList.add('visible'), Math.max(0, idx) * 120);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+    reveals.forEach(el => io.observe(el));
+
+    // 통계 섹션 카운트업 트리거
+    const summary = document.querySelector('.section-summary');
+    if (summary) {
+      const statIo = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-item strong').forEach(el => animateCount(el, el.textContent));
+            statIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      statIo.observe(summary);
     }
   }
 
