@@ -22,12 +22,13 @@
   --gray-900: #111;
   --white: #fff;
 
-  /* Typography — Font Size / Line Height (px) */
+  /* Typography — Font Size / Line Height (px)
+     표준 스케일: 12 / 14 / 16 / 18 / 20 / 24 / 28 / 32 / 36 / 48 */
   --fs-hero: 48px;    --lh-hero: 62px;
   --fs-title: 32px;   --lh-title: 42px;
   --fs-sub: 20px;     --lh-sub: 30px;
   --fs-body: 16px;    --lh-body: 26px;
-  --fs-caption: 13px; --lh-caption: 20px;
+  --fs-caption: 14px; --lh-caption: 22px;
 
   /* Weight */
   --fw-regular: 400;
@@ -44,9 +45,9 @@
 @media (max-width: 414px) {
   :root {
     --fs-hero: 28px;    --lh-hero: 38px;
-    --fs-title: 22px;   --lh-title: 30px;
+    --fs-title: 24px;   --lh-title: 32px;
     --fs-sub: 16px;     --lh-sub: 24px;
-    --fs-body: 15px;    --lh-body: 24px;
+    --fs-body: 14px;    --lh-body: 22px;
     --fs-caption: 12px; --lh-caption: 18px;
   }
 }
@@ -323,7 +324,7 @@ a { text-decoration: none; color: inherit; }
 
 .panel-item {
   padding: 10px 28px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--gray-600);
   text-align: center;
@@ -377,7 +378,7 @@ a { text-decoration: none; color: inherit; }
   border: none;
   background: transparent;
   color: var(--gray-500);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   padding: 6px 16px;
   border-radius: 999px;
@@ -428,7 +429,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-title {
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 900;
   line-height: 69px;
   color: var(--gray-900);
@@ -444,8 +445,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-desc {
-  font-size: 22px;
-  line-height: 36px;
+  font-size: 20px;
+  line-height: 32px;
   color: #4a5565;
   margin-bottom: 32px;
 }
@@ -703,7 +704,7 @@ a { text-decoration: none; color: inherit; }
 
 /* 시안 A: 둥근 pill, 파란 배경 */
 .news-card h4 .new-badge {
-  font-size: 11px;
+  font-size: 12px;
   padding: 4px 10px;
   background: var(--primary);
   border-radius: 9999px;
@@ -763,7 +764,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .news-c-featured .news-c-num {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 900;
   color: rgba(255,255,255,0.25);
   line-height: 38px;
@@ -772,7 +773,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .news-c-featured .news-c-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--white);
 }
@@ -789,7 +790,7 @@ a { text-decoration: none; color: inherit; }
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 52px;
+  font-size: 48px;
   color: rgba(255,255,255,0.1);
   pointer-events: none;
 }
@@ -872,7 +873,7 @@ a { text-decoration: none; color: inherit; }
   color: var(--white);
   border: none;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 12px;
   padding: 3px 10px;
   box-shadow: none;
 }
@@ -960,7 +961,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .label-row .section-label {
@@ -1489,7 +1490,7 @@ html:has(.news-body) body {
 }
 
 .news-page-title {
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 800;
   color: var(--gray-900);
   margin-bottom: 16px;
@@ -1645,7 +1646,7 @@ html:has(.news-body) body {
 }
 
 .news-card-excerpt {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--gray-500);
   line-height: 24px;
   margin: 0;
@@ -1655,7 +1656,7 @@ html:has(.news-body) body {
 .news-card-link {
   color: var(--primary);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   display: inline-block;
   transition: all 0.2s ease;
@@ -1703,7 +1704,7 @@ html:has(.news-body) body {
   border: 1px solid var(--gray-100);
   background-color: var(--white);
   color: var(--gray-900);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1734,7 +1735,7 @@ html:has(.news-body) body {
   border: 1px solid var(--gray-100);
   background-color: var(--white);
   color: var(--gray-900);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1868,7 +1869,7 @@ html:has(.news-body) body {
 
 .news-modal-date {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--gray-400);
   font-weight: 500;
   margin-bottom: 12px;
@@ -2164,7 +2165,7 @@ html:has(.subscribe-body) body {
 }
 
 .sub-page-title {
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 800;
   color: #0E1A2C;
   margin-bottom: 0;
@@ -2252,7 +2253,7 @@ html:has(.subscribe-body) body {
 
 /* 가격 */
 .sub-price {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 800;
   color: #111827;
   line-height: 40px;
@@ -2317,7 +2318,7 @@ html:has(.subscribe-body) body {
 }
 
 .sub-features li {
-  font-size: 15px;
+  font-size: 14px;
   color: #4B5563;
   line-height: 24px;
   padding-left: 28px;
@@ -2678,16 +2679,16 @@ html:has(.educlip-body) body {
 }
 
 .edu-hero-title {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 900;
-  line-height: 50px;
+  line-height: 62px;
   letter-spacing: -1px;
   color: #0f172a;
   margin-bottom: 20px;
 }
 
 .edu-hero-sub {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 29px;
   color: #3b4f6b;
 }
@@ -2796,7 +2797,7 @@ html:has(.educlip-body) body {
   border-radius: 12px;
   background: linear-gradient(135deg, #eef4ff, #f0f0ff);
   color: var(--gray-900);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -2849,7 +2850,7 @@ html:has(.educlip-body) body {
   height: 34px;
   padding: 0 13px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
   margin-bottom: 19.5px;
@@ -3023,7 +3024,7 @@ html:has(.educlip-body) body {
 }
 
 .edu-assure-features li {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 26px;
   color: rgba(255, 255, 255, 0.92);
   padding-left: 16px;
@@ -3140,7 +3141,7 @@ html:has(.educlip-body) body {
   margin-bottom: 4px;
   color: var(--gray-900);
   font-weight: 800;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .edu-alist p {
@@ -3254,8 +3255,8 @@ html:has(.educlip-body) body {
   .hero-desc br,
   .summary-quote br { display: none; }
 
-  .section-content { padding: 0 40px; }
-  .header-inner { padding: 0 40px; }
+  .section-content { padding: 0 48px; }
+  .header-inner { padding: 0 48px; }
 
   /* 네비게이션 */
   .nav { display: none; }
@@ -3265,12 +3266,12 @@ html:has(.educlip-body) body {
   /* Hero */
   .hero-layout { flex-direction: column; text-align: center; gap: 32px; }
   .hero-text { max-width: 100%; }
-  .hero-title { font-size: 40px; }
+  .hero-title { font-size: 36px; }
   .hero-sub { font-size: 16px; }
   .hero-desc { font-size: 16px; }
   .hero-buttons { justify-content: center; }
   .hero-image img { max-height: 400px; max-width: 100%; }
-  .hero-badge { font-size: 13px; }
+  .hero-badge { font-size: 14px; }
 
   /* 목업 배치 반응형 */
   .hero-image-single img { max-width: 380px; max-height: 560px; }
@@ -3284,13 +3285,13 @@ html:has(.educlip-body) body {
   .section-hero { padding-bottom: 60px; }
 
   /* 섹션 공통 */
-  .section-label { font-size: 32px; }
+  .section-label { font-size: 24px; line-height: 34px; }
   .section-title { font-size: 32px; }
   .section-desc { font-size: 20px; max-width: 100%; line-height: 33px; }
 
   /* Label Row → 세로 배치 (피그마: NEW 위, 라벨 아래) */
   .label-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .label-row .section-label { font-size: 32px; }
+  .label-row .section-label { font-size: 24px; }
 
   /* Feature: 텍스트 위, 이미지 아래 */
   .feature-layout { flex-direction: column; gap: 40px; }
@@ -3307,7 +3308,7 @@ html:has(.educlip-body) body {
   .crew-image img { max-height: 280px; }
 
   /* 통계 */
-  .summary-quote { font-size: 24px; }
+  .summary-quote { font-size: 24px; margin-bottom: 36px; }
   .stat-item strong { font-size: 24px; }
   .stat-item span { font-size: 12px; }
   .stats-row { gap: 24px; }
@@ -3325,7 +3326,7 @@ html:has(.educlip-body) body {
   .news-container { padding: 0 40px; }
   .news-page-section { padding: 100px 0 60px; }
   .news-page-grid { column-count: 2; }
-  .news-page-title { font-size: 32px; }
+  .news-page-title { font-size: 40px; }
   .header-scrolled-news .nav { display: none; }
   .header-scrolled-news .nav-cta { display: none; }
   .header-scrolled-news .mobile-menu-btn { display: flex; }
@@ -3354,7 +3355,7 @@ html:has(.educlip-body) body {
   .edu-hero { padding: 100px 0 60px; }
   .edu-hero-grid { flex-direction: column; text-align: center; }
   .edu-hero-copy { max-width: 100%; }
-  .edu-hero-title { font-size: 36px; }
+  .edu-hero-title { font-size: 40px; }
   .edu-hero-characters { justify-content: center; }
   .edu-hero-characters::before { width: 300px; height: 300px; }
   .edu-hero-characters img { max-width: 340px; }
@@ -3371,8 +3372,8 @@ html:has(.educlip-body) body {
 /* ===== Responsive: 모바일 (768px 이하) ===== */
 @media (max-width: 768px) {
   /* --- 메인 랜딩 --- */
-  .section-content { padding: 0 20px; }
-  .header-inner { padding: 0 20px; height: 56px; }
+  .section-content { padding: 0 24px; }
+  .header-inner { padding: 0 24px; height: 56px; }
   .header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.04); }
   .scroll-section { padding: 48px 0; }
   .section-hero { padding-top: 72px; }
@@ -3385,7 +3386,7 @@ html:has(.educlip-body) body {
 
   /* 모바일 타이포그래피 + 간격 */
   .section-label { font-size: 20px; margin-bottom: 8px; }
-  .section-title { font-size: 26px; line-height: 35px; margin-bottom: 20px; }
+  .section-title { font-size: 28px; line-height: 35px; margin-bottom: 20px; }
   .section-desc { font-size: 16px; line-height: 27px; }
   .label-row { margin-bottom: 12px; }
   .label-row .section-label { font-size: 20px; }
@@ -3393,12 +3394,12 @@ html:has(.educlip-body) body {
   /* Hero */
   .hero-title { font-size: 28px; margin-bottom: 20px; }
   .hero-sub { font-size: 14px; margin-bottom: 12px; }
-  .hero-desc { font-size: 15px; margin-bottom: 28px; line-height: 26px; }
+  .hero-desc { font-size: 14px; margin-bottom: 28px; line-height: 26px; }
   .hero-badge { font-size: 12px; padding: 6px 12px; margin-bottom: 20px; }
   .hero-layout { gap: 48px; }
   .hero-buttons { flex-direction: column; align-items: center; gap: 12px; }
   .hero-variant-switcher { bottom: 12px; }
-  .variant-btn { font-size: 11px; padding: 5px 10px; }
+  .variant-btn { font-size: 12px; padding: 5px 10px; }
   .section-hero { padding-bottom: 56px; }
 
   /* 모바일 목업 배치 */
@@ -3417,7 +3418,7 @@ html:has(.educlip-body) body {
   }
   .hero-image-double .hero-mock-left { margin-right: 4px; transform: translateY(-14px); }
   .hero-variant[data-variant="2"] .hero-text { max-width: 100%; }
-  .hero-variant[data-variant="2"] .hero-title { font-size: 26px; }
+  .hero-variant[data-variant="2"] .hero-title { font-size: 28px; }
   .hero-image-triple .hero-mock { max-width: 150px; max-height: 320px; }
   .hero-image-triple .hero-mock-left { transform: translate(-90px, 20px) rotate(-8deg) scale(0.9); }
   .hero-image-triple .hero-mock-right { transform: translate(90px, 20px) rotate(8deg) scale(0.9); }
@@ -3427,6 +3428,8 @@ html:has(.educlip-body) body {
   .phone-mockup-wrap { max-width: 100%; width: 100%; display: flex; justify-content: center; }
   .phone-screen-img { width: auto; height: auto; max-height: 50vh; max-width: 70%; }
   .hero-image img { max-height: none; max-width: 90%; margin: 0 auto; display: block; }
+  /* 폰 목업 섹션: 모바일에서 살짝 왼쪽 정렬 (02 루틴/03 다이어리/04 마켓/05 에듀클립/06 브레인랩) */
+  .feature-layout-phone .phone-mockup-wrap { justify-content: flex-start; padding-left: 16%; }
 
   /* 뉴스 섹션 모바일: 목업 숨김, 카드 1열 풀너비 */
   .section-news .phone-mockup-wrap { display: none; }
@@ -3454,19 +3457,19 @@ html:has(.educlip-body) body {
     border-radius: 12px;
   }
   .section-news .news-card .card-icon { width: 36px; height: 36px; font-size: 16px; border-radius: 10px; margin-bottom: 0; flex-shrink: 0; }
-  .section-news .news-card h4 { font-size: 15px; }
-  .section-news .news-card p { font-size: 13px; }
-  .section-news .news-card h4 .new-badge { font-size: 10px; padding: 2px 8px; }
+  .section-news .news-card h4 { font-size: 14px; }
+  .section-news .news-card p { font-size: 14px; }
+  .section-news .news-card h4 .new-badge { font-size: 12px; padding: 2px 8px; }
   .section-news .news-card-horizontal { gap: 14px; }
   .section-news .news-card-horizontal .card-icon { margin-bottom: 0; }
 
   /* 뉴스 기능 그리드 모바일 */
   .section-news .news-c { margin-top: 12px; gap: 8px; }
   .section-news .news-c-grid { gap: 8px; }
-  .section-news .news-c-item { padding: 14px 12px 12px 14px; border-radius: 14px; }
-  .section-news .news-c-num { font-size: 22px; margin-bottom: 6px; }
-  .section-news .news-c-title { font-size: 15px; }
-  .section-news .news-c-desc { font-size: 13px; }
+  .section-news .news-c-item { padding: 12px; border-radius: 14px; }
+  .section-news .news-c-num { font-size: 24px; margin-bottom: 6px; }
+  .section-news .news-c-title { font-size: 14px; }
+  .section-news .news-c-desc { font-size: 14px; }
   .section-news .news-c-bg-icon { font-size: 28px; right: 8px; bottom: 8px; }
 
   /* 피처 카드 */
@@ -3474,22 +3477,22 @@ html:has(.educlip-body) body {
   .btn-primary { font-size: 16px; padding: 14px 28px; margin-top: 20px; }
 
   /* NEW 뱃지 */
-  .new-badge { font-size: 13px; padding: 5px 14px; }
+  .new-badge { font-size: 14px; padding: 5px 14px; }
 
   /* 유저 프루프 */
   .user-proof { margin-top: 24px; gap: 16px; }
   .avatar { width: 36px; height: 36px; margin-right: -10px; }
-  .proof-text { font-size: 13px; }
+  .proof-text { font-size: 14px; }
 
   /* 체크리스트 */
   .check-list { margin-top: 20px; gap: 12px; }
   .check-item { padding: 14px; }
-  .check-item span { font-size: 15px; }
+  .check-item span { font-size: 14px; }
   .check-item i { font-size: 20px; }
 
   /* 크루 */
   .crew-image img { max-height: 240px; }
-  .crew-text .section-desc { font-size: 15px; }
+  .crew-text .section-desc { font-size: 14px; }
 
   /* 통계 */
   .section-summary { padding: 48px 0; }
@@ -3497,7 +3500,7 @@ html:has(.educlip-body) body {
   .stats-row { flex-direction: column; gap: 20px; }
   .stat-divider { width: 40px; height: 1px; }
   .stat-item strong { font-size: 32px; }
-  .stat-item span { font-size: 13px; }
+  .stat-item span { font-size: 14px; }
 
   /* 모바일 호버 제거 */
   .check-item:hover { background: rgba(0, 104, 255, 0.08); transform: none; }
@@ -3508,23 +3511,23 @@ html:has(.educlip-body) body {
   .nav-cta:hover { transform: none; box-shadow: none; }
 
   /* Footer (메인) */
-  .section-footer .section-content { padding-top: 72px; padding-bottom: 32px; }
+  .section-footer .section-content { padding-top: 48px; padding-bottom: 32px; }
   .footer-cta { padding: 24px 0 32px; }
   .footer-cta-sub { font-size: 14px; }
-  .footer-cta-title { font-size: 22px; margin-bottom: 24px; }
+  .footer-cta-title { font-size: 24px; margin-bottom: 24px; }
   .footer-mid { padding-top: 28px; }
   .footer-bottom { padding-top: 24px; }
 
   /* 시안 전환 버튼 모바일 위치 */
   .footer-variant-switcher { top: 12px; right: 20px; }
-  .footer-variant-btn { font-size: 11px; padding: 4px 10px; }
+  .footer-variant-btn { font-size: 12px; padding: 4px 10px; }
   .footer-cta-buttons { flex-direction: column; align-items: center; gap: 12px; }
   .footer-cta-buttons .btn-store-white { width: 100%; justify-content: center; }
   .footer-mid { flex-direction: column; gap: 28px; }
   .footer-links-group { gap: 32px; flex-wrap: wrap; }
   .footer-col { gap: 10px; }
   .footer-col a { font-size: 14px; }
-  .footer-details { font-size: 13px; }
+  .footer-details { font-size: 14px; }
   .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
   .footer-logo .logo-svg-white { height: 22px; }
 
@@ -3532,8 +3535,8 @@ html:has(.educlip-body) body {
   .news-container { padding: 0 20px; }
   .news-page-section { padding: 80px 0 48px; }
   .news-page-grid { column-count: 1; }
-  .news-page-title { font-size: 26px; }
-  .news-page-subtitle { font-size: 15px; }
+  .news-page-title { font-size: 36px; }
+  .news-page-subtitle { font-size: 14px; }
   .news-page-header { margin-bottom: 32px; }
   .news-tabs { gap: 8px; margin-bottom: 32px; }
   .news-tab { padding: 8px 16px; font-size: 14px; min-height: 38px; }
@@ -3545,20 +3548,20 @@ html:has(.educlip-body) body {
   .pagination-btn { padding: 8px 16px; font-size: 14px; min-width: 64px; }
   .pagination-number { width: 38px; height: 38px; font-size: 14px; }
   .news-modal-body { padding: 32px 24px; }
-  .news-modal-title { font-size: 22px; }
+  .news-modal-title { font-size: 24px; }
   .news-modal-content { border-radius: 16px; }
   .news-footer { padding: 40px 0 32px; }
   .news-footer .footer-links-group { gap: 32px; }
   .news-footer .footer-col { gap: 10px; }
   .news-footer .footer-col a { font-size: 14px; }
-  .news-footer .footer-details { font-size: 13px; }
+  .news-footer .footer-details { font-size: 14px; }
   .news-footer .footer-logo .logo-svg-white { height: 22px; }
 
   /* --- 구독 페이지 --- */
   .sub-container { padding: 0 20px; }
   .sub-page-section { padding: 80px 0 48px; }
   .sub-page-header { margin-bottom: 32px; }
-  .sub-page-title { font-size: 26px; }
+  .sub-page-title { font-size: 36px; }
   .sub-card-body { padding: 32px 24px; }
   .sub-price { font-size: 32px; }
   .sub-features li { font-size: 14px; }
@@ -3569,21 +3572,21 @@ html:has(.educlip-body) body {
   .nie-intro-title { font-size: 20px; }
   .notice-card { padding: 24px 16px; border-radius: 12px; }
   .notice-list { padding-left: 14px; }
-  .notice-list li { font-size: 13px; }
+  .notice-list li { font-size: 14px; }
   .sub-footer { padding: 40px 0 32px; }
   .sub-footer .footer-mid { flex-direction: column; gap: 28px; }
   .sub-footer .footer-links-group { gap: 32px; }
   .sub-footer .footer-col { gap: 10px; }
   .sub-footer .footer-col a { font-size: 14px; }
-  .sub-footer .footer-details { font-size: 13px; }
+  .sub-footer .footer-details { font-size: 14px; }
   .sub-footer .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
   .sub-footer .footer-logo .logo-svg-white { height: 22px; }
 
   /* --- 에듀클립 페이지 --- */
   .edu-container { padding: 0 20px; }
   .edu-hero { padding: 80px 0 40px; }
-  .edu-hero-title { font-size: 26px; }
-  .edu-hero-sub { font-size: 15px; margin-bottom: 24px; }
+  .edu-hero-title { font-size: 36px; }
+  .edu-hero-sub { font-size: 14px; margin-bottom: 24px; }
   .edu-hero-sub br { display: none; }
   .edu-eyebrow { font-size: 12px; }
   .edu-hero-grid { gap: 20px; }
@@ -3591,36 +3594,36 @@ html:has(.educlip-body) body {
   .edu-hero-characters img { max-width: 320px; }
   .edu-hero-banner { padding: 24px 0 0; }
   .edu-hero-banner img { border-radius: 12px; }
-  .edu-section-title { font-size: 22px; }
+  .edu-section-title { font-size: 24px; }
   .edu-programs { padding: 40px 0; }
   .edu-cards { grid-template-columns: 1fr; gap: 12px; }
   .edu-card { padding: 24px 20px; }
   .edu-card-title { font-size: 18px; }
   .edu-card-subtitle { font-size: 14px; }
-  .edu-card-teacher { font-size: 13px; }
+  .edu-card-teacher { font-size: 14px; }
   .edu-card-meta { font-size: 12px; gap: 16px; }
   .edu-price { font-size: 18px; }
   .edu-grade-group { padding: 32px 0; }
   .edu-band-inner { height: 100px; }
   .edu-assure { padding: 48px 0; }
   .edu-assure-badge { padding: 24px; min-height: auto; border-radius: 12px; }
-  .edu-assure-badge h3 { font-size: 22px; margin-top: 0; }
+  .edu-assure-badge h3 { font-size: 24px; margin-top: 0; }
   .edu-assure-mascot { left: 72%; top: -95px; width: 150px; height: 150px; }
   .edu-assure-desc { font-size: 14px; margin-bottom: 20px; }
-  .edu-assure-features li { font-size: 13px; }
+  .edu-assure-features li { font-size: 14px; }
   .edu-alist { padding: 20px 20px 20px 52px; }
   .edu-alist::before { left: 14px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; font-size: 14px; }
   .edu-alist strong { font-size: 14px; }
-  .edu-alist p { font-size: 13px; }
+  .edu-alist p { font-size: 14px; }
   .edu-faq { padding: 40px 0 60px; }
-  .edu-faq-item summary { padding: 16px 18px; font-size: 15px; }
+  .edu-faq-item summary { padding: 16px 18px; font-size: 14px; }
   .edu-faq-item p { padding: 0 18px 16px; }
   .edu-footer { padding: 40px 0 32px; }
   .edu-footer .footer-mid { flex-direction: column; gap: 28px; }
   .edu-footer .footer-links-group { gap: 32px; }
   .edu-footer .footer-col { gap: 10px; }
   .edu-footer .footer-col a { font-size: 14px; }
-  .edu-footer .footer-details { font-size: 13px; }
+  .edu-footer .footer-details { font-size: 14px; }
   .edu-footer .footer-bottom { flex-direction: column; gap: 16px; align-items: flex-start; }
   .edu-footer .footer-logo .logo-svg-white { height: 22px; }
 }
@@ -3632,28 +3635,32 @@ html:has(.educlip-body) body {
   .section-content { padding: 0 16px; }
   .header-inner { padding: 0 16px; height: 52px; }
   .logo-svg { height: 22px; }
-  .nav-cta { padding: 8px 14px; font-size: 13px; }
+  .nav-cta { padding: 8px 14px; font-size: 14px; }
   .scroll-section { padding: 40px 0; }
-  .section-hero { padding-top: 64px; padding-bottom: 40px; }
+  .section-hero { padding-top: 64px; padding-bottom: 48px; }
+  /* 모바일: side-nav 숨김 (햄버거로 대체) */
+  .side-nav { display: none; }
+  /* 에듀클립 CTA 풀폭 */
+  .section-educlip .btn-primary { width: 100%; justify-content: center; padding: 14px 24px; border-radius: 12px; }
 
   /* 타이포 축소 */
   .section-label { font-size: 18px; }
-  .section-title { font-size: 22px; line-height: 30px; margin-bottom: 16px; }
-  .section-desc { font-size: 15px; line-height: 25px; }
+  .section-title { font-size: 24px; line-height: 30px; margin-bottom: 16px; }
+  .section-desc { font-size: 14px; line-height: 25px; }
 
   /* Hero */
-  .hero-title { font-size: 24px; margin-bottom: 16px; line-height: 31px; }
+  .hero-title { font-size: 32px; margin-bottom: 16px; line-height: 40px; }
   .hero-desc { font-size: 14px; margin-bottom: 24px; }
-  .hero-variant[data-variant="2"] .hero-title { font-size: 23px; }
+  .hero-variant[data-variant="2"] .hero-title { font-size: 24px; }
   .hero-image-single img { max-width: 200px; max-height: 340px; }
   .hero-image-double { max-width: 300px; }
   .hero-image-double .hero-mock { width: 150px; }
-  .btn-store { padding: 12px 16px; font-size: 15px; border-radius: 10px; }
-  .btn-primary { font-size: 15px; padding: 12px 20px; }
+  .btn-store { padding: 12px 16px; font-size: 14px; border-radius: 10px; }
+  .btn-primary { font-size: 14px; padding: 12px 20px; }
 
   /* 뉴스 카드 — 작은 화면에서 아이콘/패딩 축소 */
-  .section-news .news-c-grid { gap: 6px; }
-  .section-news .news-c-item { padding: 12px 12px 10px 12px; }
+  .section-news .news-c-grid { grid-template-columns: 1fr; gap: 8px; }
+  .section-news .news-c-item { padding: 10px 12px; }
   .section-news .news-c-num { font-size: 20px; }
   .section-news .news-c-title { font-size: 14px; }
   .section-news .news-c-desc { font-size: 12px; }
@@ -3673,28 +3680,28 @@ html:has(.educlip-body) body {
   /* Footer 공통 */
   .footer-cta-title { font-size: 20px; }
   .footer-logo .logo-svg-white { height: 20px; }
-  .footer-col a { font-size: 13px; }
+  .footer-col a { font-size: 14px; }
   .footer-details { font-size: 12px; line-height: 19px; }
   .footer-links-group { gap: 24px; }
 
   /* --- 뉴스 페이지 --- */
   .news-container { padding: 0 16px; }
-  .news-page-title { font-size: 22px; }
+  .news-page-title { font-size: 32px; }
   .news-page-subtitle { font-size: 14px; }
   .news-tabs { gap: 6px; flex-wrap: wrap; }
-  .news-tab { padding: 6px 12px; font-size: 13px; min-height: 34px; }
+  .news-tab { padding: 6px 12px; font-size: 14px; min-height: 34px; }
   .news-card { padding: 16px 14px; }
-  .news-card-title { font-size: 15px; }
-  .news-card-excerpt { font-size: 13px; }
+  .news-card-title { font-size: 14px; }
+  .news-card-excerpt { font-size: 14px; }
   .news-card-image { height: 120px; }
-  .pagination-btn { padding: 6px 12px; font-size: 13px; min-width: 56px; }
-  .pagination-number { width: 32px; height: 32px; font-size: 13px; }
+  .pagination-btn { padding: 6px 12px; font-size: 14px; min-width: 56px; }
+  .pagination-number { width: 32px; height: 32px; font-size: 14px; }
   .news-modal-body { padding: 24px 18px; }
   .news-modal-title { font-size: 20px; }
 
   /* --- 구독 페이지 --- */
   .sub-container { padding: 0 16px; }
-  .sub-page-title { font-size: 22px; }
+  .sub-page-title { font-size: 32px; }
   .sub-card-body { padding: 24px 18px; }
   .sub-price { font-size: 28px; }
   .nie-title { font-size: 20px; }
@@ -3705,20 +3712,20 @@ html:has(.educlip-body) body {
 
   /* --- 에듀클립 --- */
   .edu-container { padding: 0 16px; }
-  .edu-hero-title { font-size: 22px; line-height: 29px; }
+  .edu-hero-title { font-size: 32px; line-height: 40px; }
   .edu-hero-sub { font-size: 14px; }
   .edu-hero-characters::before { width: 240px; height: 240px; border-width: 10px; }
   .edu-hero-characters img { max-width: 280px; }
   .edu-section-title { font-size: 20px; }
   .edu-card { padding: 20px 16px; }
   .edu-card-title { font-size: 16px; }
-  .edu-card-subtitle { font-size: 13px; }
+  .edu-card-subtitle { font-size: 14px; }
   .edu-assure-badge { padding: 20px; }
   .edu-assure-badge h3 { font-size: 20px; }
   .edu-assure-mascot { left: 62%; top: -80px; width: 120px; height: 120px; }
   .edu-alist { padding: 16px 16px 16px 46px; }
   .edu-alist::before { left: 12px; width: 24px; height: 24px; font-size: 12px; }
-  .edu-alist strong { font-size: 13px; }
+  .edu-alist strong { font-size: 14px; }
   .edu-alist p { font-size: 12px; }
   .edu-faq-item summary { padding: 14px 16px; font-size: 14px; }
 }
