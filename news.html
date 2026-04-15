@@ -287,10 +287,6 @@
 
   <!-- Footer -->
   <footer class="news-footer">
-    <div class="footer-variant-switcher">
-      <button type="button" class="footer-variant-btn active" data-theme="dark">다크</button>
-      <button type="button" class="footer-variant-btn" data-theme="light">라이트</button>
-    </div>
     <div class="news-container">
       <!-- 회사 정보 + 링크 -->
       <div class="footer-mid">
@@ -342,17 +338,6 @@
         mobileNav.classList.toggle('open');
       });
     }
-
-    // 푸터 시안 전환
-    document.querySelectorAll('.footer-variant-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const theme = btn.dataset.theme;
-        document.querySelectorAll('.footer-variant-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelector('.news-footer').classList.toggle('footer-light', theme === 'light');
-      });
-    });
 
     // 뉴스 탭 필터링
     const newsTabs = document.querySelectorAll('.news-tab');
